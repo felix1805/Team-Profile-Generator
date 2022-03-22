@@ -4,6 +4,7 @@ const jest = require('jest');
 const Manager = require('./lib/Manager');
 const Engineer = require('./lib/Engineer');
 const Intern = require('./lib/Intern')
+const siteGenerator = require('./src/site-generator')
 const teamInfo = [];
 
 
@@ -34,7 +35,7 @@ const managerPrompt = () => {
 
             }])
         .then(response => {
-            const manager = new Manager(response.managerName, response.managerId, response.managerEmail, response.manageroffice)
+            const manager = new Manager(response.managerName, response.managerId, response.managerEmail, response.managerOffice);
             teamInfo.push(manager);
             console.log(manager);
             promptMain();
@@ -48,14 +49,10 @@ const promptMain = () => {
                 type: 'list',
                 message: 'Are you done building your team? Or do you have to add more users?',
                 name: 'finishTeam',
-                choices: [
-                    { name: 'Add an Engineer', value: 'add engineer' },
-                    { name: 'Add an Intern', value: 'add intern' },
-                    { name: 'Finish building my Team', value: 'finish team' },
-                ]
+                choices: ['Add an Engineer', 'Add an Intern', 'Finish building my Team']
             }])
         .then(userSelection => {
-            switch (userSelection.menu) {
+            switch (userSelection.finishTeam) {
                 case "Add an Engineer":
                     engineerPrompt();
                     break;
@@ -82,7 +79,7 @@ const engineerPrompt = () => {
             {
                 type: 'input',
                 message: 'What is the engineer\'s employee ID?',
-                name: 'engineerID'
+                name: 'engineerId'
             },
             {
                 type: 'input',
@@ -95,7 +92,7 @@ const engineerPrompt = () => {
                 name: 'engineerGitHub'
             }])
         .then(response => {
-            const engineer = new Engineer(response.engineerName, response.engineerID, response.engineerEmail, response.engineerGitHub);
+            const engineer = new Engineer(response.engineerName, response.engineerId, response.engineerEmail, response.engineerGitHub);
             teamInfo.push(engineer);
             console.log(engineer)
             promptMain();
@@ -112,7 +109,7 @@ const internPrompt = () => {
             {
                 type: 'input',
                 message: 'What is the Inter\'s employee ID?',
-                name: 'internID'
+                name: 'internId'
             },
             {
                 type: 'input',
@@ -125,13 +122,15 @@ const internPrompt = () => {
                 name: 'internSchool'
             }])
         .then(response => {
-            const intern = new Intern(response.internName, response.internID, response.internEmail, response.internSchool);
+            const intern = new Intern(response.internName, response.internId, response.internEmail, response.internSchool);
             teamInfo.push(intern);
             console.log(intern);
             promptMain();
         })
 };
 const assembleTeam = () => {
+    console.log(myTeam);
+    fs.writeFile('page.html', siteGenerator(myTeam), "utf-8");
 
 };
 
