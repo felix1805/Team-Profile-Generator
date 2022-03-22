@@ -1,0 +1,54 @@
+* {
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+header {
+    display: flex;
+    justify-content: center;
+    color: white;
+    background-color: rgba(255, 0, 0, 0.8);
+    padding: 5px;
+    margin: 10px;
+    font-size: 25px;
+
+};
+body {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+main {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-around; 
+}
+
+.engineerCard, .internCard, .managerCard {
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(181, 184, 184);
+    margin: 10px;
+    width: 325px;
+    height: 200px;
+    border-radius: 3px;
+    border-color: rgb(117, 117, 117);
+    border-style: solid;
+    font-size: 20px;
+}
+
+.engineerHeader, .internHeader, .managerHeader {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(157, 157, 238);
+    font-size: 25px;
+}
+.managerList,
+.engineerList,
+.internList {
+    list-style-type: none;
+    padding: 10px 10px;
+    
+}
+
