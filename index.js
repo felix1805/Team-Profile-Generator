@@ -59,7 +59,7 @@ const promptMain = () => {
                 case "Add an Intern":
                     internPrompt();
                     break;
-                case "finish building team":
+                case "Finish building my Team":
                     assembleTeam();
                     break;
 
@@ -128,10 +128,11 @@ const internPrompt = () => {
             promptMain();
         })
 };
-const assembleTeam = () => {
-    console.log(myTeam);
-    fs.writeFile('./dist/page.html', siteGenerator(myTeam), "utf-8");
-
+const assembleTeam = (fileName, data) => {
+    fs.writeFile('./dist/page.html', siteGenerator(teamInfo), (err) => {
+        err ? console.error(err) : console.log('success!')
+    });
 };
+
 
 managerPrompt();

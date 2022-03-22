@@ -47,13 +47,13 @@ ${intern.name}</div>
     };
     for (let i = 0; i < team.length; i++) {
         if (team[i].getRole() === "Manager") {
-            generateManager(team[i]);
+            createManager(team[i]);
         }
         if (team[i].getRole() === "Engineer") {
-            generateEngineer(team[i]);
+            createEngineer(team[i]);
         }
         if (team[i].getRole() === "Intern") {
-            generateIntern(team[i]);
+            createIntern(team[i]);
         }
     }
 
