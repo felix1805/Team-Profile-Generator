@@ -1,3 +1,5 @@
+const Engineer = require('../lib/Engineer')
+
 describe('Engineer', () => {
     describe('init', () => {
         it('should require a name, id, and email', () => {
@@ -21,6 +23,12 @@ describe('Engineer', () => {
             const engineer = new Engineer('Frank', 1, 'f@gmail.com');
 
             expect(engineer.getId()).toBe(1);
+        });
+    });
+    describe('getEmail', () => {
+        it('should return the email', () => {
+            const engineer = new Engineer('Frank', 1, 'f@gmail.com');
+            expect(engineer.getEmail()).toBe('f@gmail.com');
         });
     });
     describe('getRole', () => {

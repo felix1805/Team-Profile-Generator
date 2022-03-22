@@ -1,3 +1,5 @@
+const Manager = require('../lib/Manager')
+
 describe('Manager', () => {
     describe('init', () => {
         it('should require a name, id, and email', () => {
@@ -20,7 +22,13 @@ describe('Manager', () => {
         it('should return the id', () => {
             const manager = new Manager ('Bob', 3, 'b@gmail.com')
 
-            expect(engineer.getId()).toBe(3);
+            expect(manager.getId()).toBe(3);
+        });
+    });
+    describe('getEmail', () => {
+        it('should return the email', () => {
+            const manager = new Manager ('Bob', 3, 'b@gmail.com')
+            expect(manager.getEmail()).toBe('b@gmail.com');
         });
     });
     describe('getRole', () => {
