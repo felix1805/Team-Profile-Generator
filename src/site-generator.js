@@ -1,5 +1,3 @@
-const { profileEnd } = require("console");
-
 const assembleTeam = (team) => {
     const profilePage = [];
 

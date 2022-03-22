@@ -2,40 +2,19 @@ const Engineer = require('../lib/Engineer')
 
 describe('Engineer', () => {
     describe('init', () => {
-        it('should require a name, id, and email', () => {
-            const engineer = new Engineer ('Frank', 1, 'f@gmail.com');
+        it('should require a GitHub user name', () => {
+            const engineer = new Engineer ('Frank', 1, 'f@gmail.com', 'frank1407git');
 
-            expect('name' in engineer).toBe(true);
-            expect('id' in engineer).toBe(true);
-            expect('email' in engineer).toBe(true);
-            
+            expect('github' in engineer).toBe(true);
+           
         });
     });
-    describe('getName', () => {
-        it('should return the name', () => {
-            const engineer = new Engineer('Frank', 1, 'f@gmail.com');
+    describe('getGithub', () => {
+        it('should return the GitHub user name', () => {
+            const engineer = new Engineer('Frank', 1, 'f@gmail.com', 'frank1407git');
 
-            expect(engineer.getName()).toBe('Frank');
+            expect(engineer.getGithub()).toBe('frank1407git');
         });
     });
-    describe('getId',() => {
-        it('should return the id', () => {
-            const engineer = new Engineer('Frank', 1, 'f@gmail.com');
-
-            expect(engineer.getId()).toBe(1);
-        });
-    });
-    describe('getEmail', () => {
-        it('should return the email', () => {
-            const engineer = new Engineer('Frank', 1, 'f@gmail.com');
-            expect(engineer.getEmail()).toBe('f@gmail.com');
-        });
-    });
-    describe('getRole', () => {
-        it('should return the role', () => {
-            const engineer = new Engineer('Frank', 1, 'f@gmail.com');
-
-            expect(engineer.getRole()).toBe('Engineer');
-        });
-    });
+    
 });
