@@ -4,7 +4,7 @@ const jest = require('jest');
 const Manager = require('./lib/Manager');
 const Engineer = require('./lib/Engineer');
 const Intern = require('./lib/Intern')
-const siteGenerator = require('./src/site-generator')
+const siteGenerator = require('./src/site-generator.js')
 const teamInfo = [];
 
 
@@ -130,7 +130,7 @@ const internPrompt = () => {
 };
 const assembleTeam = () => {
     console.log(myTeam);
-    fs.writeFile('page.html', siteGenerator(myTeam), "utf-8");
+    fs.writeFile('./dist/page.html', siteGenerator(myTeam), "utf-8");
 
 };
 
