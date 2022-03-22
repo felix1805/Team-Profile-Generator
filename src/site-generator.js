@@ -1,4 +1,4 @@
-const assembleTeam = (team) => {
+const generateteam = (team) => {
     const profilePage = [];
 
     const createManager = manager => {
@@ -23,7 +23,7 @@ ${engineer.name}</div>
 <ul class = "engineerList">
 <li class = "engineerListItem">Id: ${engineer.id}</li>
 <li class = "engineerListItem">Email: <span id="email"><a href="mailto:${engineer.email}">${engineer.email}</a></span></li>
-<li class = "engineerListItem">GitHub: ${engineer.github}</li>
+<a href="https://github.com/${engineer.engineerGitHub}" target="_blank"><li class = "engineerListItem">GitHub:${engineer.engineerGitHub}</li></a>
 </ul>
 </div>
 `;
@@ -37,7 +37,7 @@ ${intern.name}</div>
 <ul class = "internList">
 <li class = "internListItem">Id: ${intern.id}</li>
 <li class = "internListItem">Email: <span id="email"><a href="mailto:${intern.email}">${intern.email}</a></span></li>
-<li class = "internListItem">School: ${intern.school}</li>
+<li class = "internListItem">School: ${intern.internSchool}</li>
 </ul>
 </div>
         `;
@@ -65,14 +65,14 @@ module.exports = team => {
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="./style.css"
+        <link rel="stylesheet" href="./style.css">
         <title>Team Profile Generator</title>
     </head>
     <body>
         <header>
         <h1>My Team</h1>
     </header>
-    <main>${assembleTeam(team)}</main>
+    <main>${generateteam(team)}</main>
         
     </body>
     </html>

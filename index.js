@@ -60,7 +60,7 @@ const promptMain = () => {
                     internPrompt();
                     break;
                 case "Finish building my Team":
-                    assembleTeam();
+                    generateteam();
                     break;
 
             }
@@ -118,7 +118,7 @@ const internPrompt = () => {
             },
             {
                 type: 'input',
-                message: 'What is the Intern\'s School username?',
+                message: 'What is the Intern\'s School?',
                 name: 'internSchool'
             }])
         .then(response => {
@@ -128,7 +128,7 @@ const internPrompt = () => {
             promptMain();
         })
 };
-const assembleTeam = (fileName, data) => {
+const generateteam = (fileName, data) => {
     fs.writeFile('./dist/page.html', siteGenerator(teamInfo), (err) => {
         err ? console.error(err) : console.log('success!')
     });

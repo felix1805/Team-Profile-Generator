@@ -5,7 +5,7 @@ describe('Engineer', () => {
         it('should require a GitHub user name', () => {
             const engineer = new Engineer ('Frank', 1, 'f@gmail.com', 'frank1407git');
 
-            expect('github' in engineer).toBe(true);
+            expect('getGithub' in engineer).toBe(true);
            
         });
     });
