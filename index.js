@@ -13,24 +13,24 @@ const managerPrompt = () => {
         .prompt([
             {
                 type: 'input',
-                message: 'What is your team manager\'s first name?',
+                message: 'What is your Team manager\'s first name?',
                 name: 'managerName',
             },
             {
                 type: 'input',
-                message: 'What is your team manager\'s employee ID?',
+                message: 'What is your Team Manager\'s employee ID?',
                 name: 'managerId',
 
             },
             {
                 type: 'input',
-                message: 'What is your manager\'s email address?',
+                message: 'What is your Team Manager\'s email address?',
                 name: 'managerEmail',
 
             },
             {
                 type: 'input',
-                message: 'What is your manager\'s office number?',
+                message: 'What is your Team Manager\'s office number?',
                 name: 'managerOffice'
 
             }])
@@ -73,22 +73,22 @@ const engineerPrompt = () => {
         .prompt([
             {
                 type: 'input',
-                message: 'What is the Engineer\'s name?',
+                message: 'What is the Engineer\'s first name?',
                 name: 'engineerName'
             },
             {
                 type: 'input',
-                message: 'What is the engineer\'s employee ID?',
+                message: 'What is the Engineer\'s employee ID?',
                 name: 'engineerId'
             },
             {
                 type: 'input',
-                message: 'What is the engineer\'s email?',
+                message: 'What is the Engineer\'s email?',
                 name: 'engineerEmail'
             },
             {
                 type: 'value',
-                message: 'What is the engineer\'s gitHub username?',
+                message: 'What is the Engineer\'s gitHub username?',
                 name: 'engineerGitHub'
             }])
         .then(response => {
@@ -108,7 +108,7 @@ const internPrompt = () => {
             },
             {
                 type: 'input',
-                message: 'What is the Inter\'s employee ID?',
+                message: 'What is the Intern\'s employee ID?',
                 name: 'internId'
             },
             {
